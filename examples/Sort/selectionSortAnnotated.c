@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+void sort(int N, int *y){
 
 /*@ begin PerfTuning (
  def build {
@@ -18,51 +17,50 @@ int main()
    #constraint divisible_by_two = (UF % 2 == 0);
  }
  def input_params {
-   param N[] = [100000];
+   param N[] = [10000];
  }
  def input_vars {
-   decl dynamic double array[N] = random;
+   decl dynamic int y[N] = 0;
  }
  def search {
-   arg algorithm = 'Exhaustive';
+   arg algorithm = 'Randomsearch';
  }
 ) @*/
 
-   int array[100], n, d, position, swap;
-   int N = 100;
-   n = N;
-   int c;
+   int d, position, swap;
+   int n=N;
+   
+//   register int i;
+   
+   int i;
+   for ( i = 0 ; i <= (n-1) ; i=i+1 )
+      y[i] = (rand() % 300);
  
-   for ( c = 0 ; c <= (n-1) ; c=c+1 )
-      array[c] = (rand() % 300);
- 
-   for ( c = 0 ; c <= (n-2) ; c=c+1 )
+   for ( i = 0 ; i <= (n-2) ; i=i+1 )
    {
-      position = c;
+      position = i;
 
-      for ( d = (c + 1) ; d <= (n-1) ; d=d+1 )
+      for ( d = (i + 1) ; d <= (n-1) ; d=d+1 )
       {
-         if ( array[position] > array[d] )
+         if ( y[position] > y[d] )
             position = d;
       }
-      if ( position != c )
+      if ( position != i )
       {
-         swap = array[c];
-         array[c] = array[position];
-         array[position] = swap;
+         swap = y[i];
+         y[i] = y[position];
+         y[position] = swap;
       }
    }
 
 /*@ begin Loop ( 
   transform Unroll(ufactor=UF) 
-   for ( c = 0 ; c <= (n-1) ; c=c+1 )
-      printf("%d\t", array[c]);
+   for ( i = 0 ; i <= (n-1) ; i=i+1 )
+      printf("%d\t", y[i]);
 ) @*/
- 
-   for ( c = 0 ; c <= (n-1) ; c=c+1 )
-      printf("%d\t", array[c]);
 
-   return 0;
+   for ( i = 0 ; i <= (n-1) ; i=i+1 )
+      printf("%d\t", y[i]);
 
 /*@ end @*/
 /*@ end @*/

@@ -1,0 +1,19 @@
+digraph CFG {
+	_JOIN_11370 [label="_JOIN_11370None...",shape=box];
+	11369 [label="11369  printf("%d\t",y[i]);...",shape=box];
+	11369 -> _JOIN_11370;
+	ForLoop11300 [label="ForLoop11300  for (i=0; i<=n-8; i=i+8) {...",shape=box];
+	ForLoop11300 -> 11228;
+	ForLoop11300 -> _JOIN_11300;
+	ForLoop11370 [label="ForLoop11370  for (i=n-((n-(0))%8); i<=n-1; i=i+1) ...",shape=box];
+	ForLoop11370 -> 11369;
+	ForLoop11370 -> _JOIN_11370;
+	_JOIN_11300 [label="_JOIN_11300None...",shape=box];
+	_JOIN_11300 -> ForLoop11370;
+	11056 [label="11056  int i;...",shape=box];
+	11056 -> ForLoop11300;
+	11228 [label="11228  printf("%d\t",y[i]);...",shape=box];
+	_TOP_ [label="_TOP_None...",shape=box];
+	_TOP_ -> 11056;
+
+}
