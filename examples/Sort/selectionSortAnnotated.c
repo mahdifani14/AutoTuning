@@ -30,12 +30,35 @@ void sort(int N, int *y){
    int d, position, swap;
    int n=N;
    
-//   register int i;
+   register int i;
    
-   int i;
+  
+
    for ( i = 0 ; i <= (n-1) ; i=i+1 )
       y[i] = (rand() % 300);
  
+// int i;
+/*@ begin Loop (  
+	
+	transform Unroll(ufactor=UF)	
+	for ( i = 0 ; i <= (n-2) ; i=i+1 )
+	   {
+	      position = i;
+	      
+	      transform Unroll(ufactor=UF)
+	      for ( d = (i + 1) ; d <= (n-1) ; d=d+1 )
+	      {
+		 if ( y[position] > y[d] )
+		 {
+		    position = d;
+		    swap = y[i];
+		    y[i] = y[position];
+		    y[position] = swap;
+		 }
+	      }
+	   }
+) @*/
+
    for ( i = 0 ; i <= (n-2) ; i=i+1 )
    {
       position = i;
@@ -44,20 +67,12 @@ void sort(int N, int *y){
       {
          if ( y[position] > y[d] )
             position = d;
-      }
-      if ( position != i )
-      {
+
          swap = y[i];
          y[i] = y[position];
          y[position] = swap;
       }
    }
-
-/*@ begin Loop ( 
-  transform Unroll(ufactor=UF) 
-   for ( i = 0 ; i <= (n-1) ; i=i+1 )
-      printf("%d\t", y[i]);
-) @*/
 
    for ( i = 0 ; i <= (n-1) ; i=i+1 )
       printf("%d\t", y[i]);
