@@ -1,4 +1,4 @@
 # AutoTuning
-We are going to create a Auto-Tuning chain to optimize software executions on heterogeneous systems.
+We are going to create an Auto-Tuning chain to optimize software execution and compilation time upon heterogeneous systems.
 ## Guidline
 
