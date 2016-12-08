@@ -46,8 +46,8 @@ void mat3x3(int N, int *y){
  }
 ) @*/
 
-  int d, k, sum = 0;
-  int first[10][10], second[10][10], multiply[10][10];
+  int d, k;
+  int first[10][10], second[10][10], multiply[10][10]={0};
   int n=N/10;
 
   register int i;
@@ -69,10 +69,7 @@ void mat3x3(int N, int *y){
     for (d = 0; d <= (n-1); d=d+1)
     {
       for (k = 0; k <= (n-1); k=k+1)
-        sum = sum + first[i][k]*second[k][d];
-
-      multiply[i][d] = sum;
-      sum = 0;
+        multiply[i][d] = multiply[i][d] + first[i][k]*second[k][d];
     }
   }
 ) @*/
@@ -82,10 +79,7 @@ void mat3x3(int N, int *y){
       for (d = 0; d <= (n-1); d=d+1)
       {
         for (k = 0; k <= (n-1); k=k+1)
-          sum = sum + first[i][k]*second[k][d];
-
-        multiply[i][d] = sum;
-        sum = 0;
+          multiply[i][d] = multiply[i][d] + first[i][k]*second[k][d];
       }
     }
 
