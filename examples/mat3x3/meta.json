@@ -1,1 +1,13 @@
-{"size_N": 10, "all_costs": [7.44e-06, 5.741e-06, 5.582e-06, 5.62e-06, 5.639e-06], "mean_transfer": Infinity, "LastCounter": 40, "SourceName": "multiplication.c", "loop_transformations": [], "coordinate": [9, 3], "average_cost": 5.6455e-06, "CFLAGS": "-O3", "src_filenames": "multiplication.c", "UF": 10}
+{
+    "size_N": 10,
+    "all_costs": [7.44e-06, 5.741e-06, 5.582e-06, 5.62e-06, 5.639e-06],
+    "mean_transfer": Infinity,
+    "LastCounter": 40,
+    "SourceName": "multiplication.c",
+    "loop_transformations": [],
+    "coordinate": [9, 3],
+    "average_cost": 5.6455e-06,
+    "CFLAGS": "-O3",
+    "src_filenames": "multiplication.c",
+    "UF": 10
+}
