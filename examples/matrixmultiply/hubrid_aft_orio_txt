@@ -1,0 +1,102 @@
+mkdir -p output
+mkdir -p output/ip
+cp ../../boards/CycloneV/DE1-SoC/Tiger_SDRAM/top.qpf output/top.qpf
+cp ../../boards/CycloneV/DE1-SoC/Tiger_SDRAM/top.qsf output/top.qsf
+cp ../../boards/CycloneV/DE1-SoC/Tiger_SDRAM/top.v output/top.v
+# create an sdc file with a 1ns clock period
+echo "create_clock -period 2 -name clk [get_ports clk]" > output/top.sdc
+echo "create_clock -period 1 -name clk2x [get_ports clk2x]" >> output/top.sdc
+echo "create_clock -period 2 -name OSC_50_BANK2 [get_ports OSC_50_BANK2]" >> output/top.sdc
+echo "create_clock -period 20 -name CLOCK_50 [get_ports CLOCK_50]" >> output/top.sdc
+echo "create_clock -period 10MHz {altera_reserved_tck}" >> output/top.sdc
+echo "set_clock_groups -asynchronous -group {altera_reserved_tck}" >> output/top.sdc
+echo "set_input_delay -clock {altera_reserved_tck} 20 [get_ports altera_reserved_tdi]" >> output/top.sdc
+echo "set_input_delay -clock {altera_reserved_tck} 20 [get_ports altera_reserved_tms]" >> output/top.sdc
+echo "set_output_delay -clock {altera_reserved_tck} 20 [get_ports altera_reserved_tdo]" >> output/top.sdc
+echo "derive_pll_clocks" >> output/top.sdc
+echo "derive_clock_uncertainty" >> output/top.sdc
+cp ../../boards/CycloneV/DE1-SoC/Tiger_SDRAM/legup_system.qsys output/legup_system.qsys
+cp ../../boards/CycloneV/DE1-SoC/Tiger_SDRAM/legup_system.sopcinfo output/legup_system.sopcinfo
+cp -r ../../boards/CycloneV/DE1-SoC/Tiger_SDRAM/legup_system output/.
+cp ../../boards/legup_components.ipx output/legup_components.ipx
+# produces pre-link time optimization binary bitcode per source file
+clang-3.5 matrixmultiply.c -emit-llvm -c -fno-builtin -I ../lib/include/ -m32 -I /usr/include/i386-linux-gnu -O3 -fno-vectorize -fno-slp-vectorize -o matrixmultiply.fe.bc -I ../../tiger/tool_source/lib
+# linking may produce llvm mem-family intrinsics
+../../llvm/Release+Asserts/bin/llvm-link  matrixmultiply.fe.bc -o output/matrixmultiply.bc
+# annotate loop labels
+../mark_labels.pl matrixmultiply.c > matrixmultiply_labeled.c
+# produces pre-link time optimization binary bitcode: matrixmultiply.prelto.bc
+clang-3.5 matrixmultiply_labeled.c -emit-llvm -pthread -c -fno-builtin -I ../lib/include/ -m32 -I /usr/include/i386-linux-gnu -O3 -fno-vectorize -fno-slp-vectorize -mllvm -inline-threshold=-100 -o matrixmultiply.prelto.1.bc -I ../../tiger/tool_source/lib
+make hybridFrontendCommon HYBRID_FRONTEND_SUFFIX=prelto.1.bc
+make[1]: Entering directory `/home/legup/legup-4.0/examples/matrixmultiply'
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.1.bc
+../../llvm/Release+Asserts/bin/opt -loops -loop-simplify < matrixmultiply.prelto.1.bc > matrixmultiply.prelto.2.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.2.bc
+export LEGUP_HYBRID_FLOW=1;\
+	../../llvm/Release+Asserts/bin/opt -legup-config=config.tcl -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -legup-parallel-api < matrixmultiply.prelto.2.bc > matrixmultiply.prelto.3.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.3.bc	
+#../../llvm/Release+Asserts/bin/llvm-link  matrixmultiply.prelto.3.bc -o matrixmultiply.prelto.11.bc
+#../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.11.bc
+#../../llvm/Release+Asserts/bin/opt -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -internalize-public-api-list=main -internalize < matrixmultiply.prelto.11.bc > matrixmultiply.prelto.bc
+#cp matrixmultiply.prelto.11.bc matrixmultiply.prelto.bc
+../../llvm/Release+Asserts/bin/opt -globalopt  < matrixmultiply.prelto.3.bc > matrixmultiply.prelto.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.bc
+make[1]: Leaving directory `/home/legup/legup-4.0/examples/matrixmultiply'
+# strips away non-accelerated functions
+export LEGUP_HYBRID_FLOW=1;\
+	../../llvm/Release+Asserts/bin/opt -legup-config=config.tcl -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -legup-hw-only < matrixmultiply.prelto.bc > matrixmultiply.prelto.hw.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.hw.bc
+# replace accelerated functions with wrappers, generate tcl files to control SOPC builder, generate wave.do file for Modelsim 
+# creates file: legup_wrappers.c, legup_sopc.tcl, _hw.tcl, wave.do
+export LEGUP_HYBRID_FLOW=1;\
+	export LEGUP_ACCELERATOR_FILENAME=matrixmultiply;\
+	../../llvm/Release+Asserts/bin/opt -legup-config=config.tcl -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -loops -loop-simplify -legup-sw-only < matrixmultiply.prelto.bc > matrixmultiply.prelto.sw.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.prelto.sw.bc
+cp matrixmultiply.prelto.sw.bc output/matrixmultiply.sw.parted.bc
+../../llvm/Release+Asserts/bin/opt -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -legup-prelto output/matrixmultiply.sw.parted.bc -o output/matrixmultiply.sw.prelto.1.bc
+../../llvm/Release+Asserts/bin/opt -std-link-opts output/matrixmultiply.sw.prelto.1.bc -o output/matrixmultiply.sw.prelto.bc
+../../llvm/Release+Asserts/bin/llvm-link  output/matrixmultiply.sw.prelto.bc ../lib/llvm/liblegup.bc ../lib/llvm/liblegupParallel.bc ../lib/llvm/libm.bc -o output/matrixmultiply.sw.2.bc
+../../llvm/Release+Asserts/bin/opt -std-link-opts output/matrixmultiply.sw.2.bc -o output/matrixmultiply.sw.bc
+../../llvm/Release+Asserts/bin/llvm-dis output/matrixmultiply.sw.bc
+../../llvm/Release+Asserts/bin/llvm-dis output/matrixmultiply.sw.bc
+../remove_attributes.sh output/matrixmultiply.sw.ll
+../../llvm-2.9_mips/Release+Asserts/bin//llc output/matrixmultiply.sw.ll -march=mipsel -relocation-model=static -mips-ssection-threshold=0 -mcpu=mips1 -o output/matrixmultiply.MIPSI.s	
+../../swtools/binutils/bin/mipsel-elf-as output/matrixmultiply.MIPSI.s -mips1 -mabi=32 -o output/matrixmultiply.MIPSI.o -EL
+../../swtools/binutils/bin/mipsel-elf-ld -T ../../swtools/mips/prog_link.ld --defsym mem_start_addr=0x40000000 --defsym mem_size=0x04000000 ../../swtools/mips/lib/mips_startup.o output/matrixmultiply.MIPSI.o ../../tiger/tool_source/lib/performance_counter.o -o output/matrixmultiply.MIPSI.elf -EL -L ../../swtools/mips/lib -lgcc -lfloat -luart -lmem
+../../swtools/binutils/bin/mipsel-elf-objdump -D output/matrixmultiply.MIPSI.elf > output/matrixmultiply.MIPSI.src
+cp output/matrixmultiply.MIPSI.src matrixmultiply.src
+cp output/matrixmultiply.MIPSI.elf output/matrixmultiply.elf
+# HW part
+# performs intrinsic lowering so that the linker may be optimized
+../../llvm/Release+Asserts/bin/opt -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -legup-prelto < matrixmultiply.prelto.hw.bc > matrixmultiply.hw.lowered.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw.lowered.bc
+../../llvm/Release+Asserts/bin/llvm-link  matrixmultiply.hw.lowered.bc ../lib/llvm/libm.bc ../lib/llvm/liblegup.bc -o matrixmultiply.hw1.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw1.bc
+#inling needs to be disable since it needs to detect which parallel API functions are being used in llc
+../../llvm/Release+Asserts/bin/llvm-link matrixmultiply.hw1.bc ../lib/llvm/liblegupParallel.bc -o matrixmultiply.hw12.bc
+../../llvm/Release+Asserts/bin/opt -internalize-public-api-list=multiply -internalize -globaldce matrixmultiply.hw12.bc -o matrixmultiply.hw2.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw2.bc
+../../llvm/Release+Asserts/bin/opt -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -basicaa -loop-simplify -indvars2 -loop-pipeline < matrixmultiply.hw2.bc > matrixmultiply.hw3.bc 
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw3.bc
+#need to run this pass again since the linker may have introduced other intrinsics
+../../llvm/Release+Asserts/bin/opt -load=../../llvm/Release+Asserts/lib/LLVMLegUp.so -legup-config=../legup.tcl -legup-config=config.tcl -legup-prelto < matrixmultiply.hw3.bc > matrixmultiply.hw.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw.bc
+../../llvm/Release+Asserts/bin/opt -internalize-public-api-list=multiply -internalize -instcombine -globaldce -adce matrixmultiply.hw.bc -o matrixmultiply.hw.11.bc
+# ../../llvm/Release+Asserts/bin/opt -internalize-public-api-list=multiply -internalize -instcombine -globaldce -adce -inline matrixmultiply.hw.bc -o matrixmultiply.hw.11.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw.11.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw.bc
+../../llvm/Release+Asserts/bin/opt -internalize-public-api-list=multiply -internalize -instcombine -globaldce -adce -inline matrixmultiply.hw.bc -o matrixmultiply.hw.11.bc
+../../llvm/Release+Asserts/bin/llvm-dis matrixmultiply.hw.11.bc
+export LEGUP_HYBRID_FLOW=1;\
+	export LEGUP_ACCELERATOR_FILENAME=matrixmultiply; \
+#	export LEGUP_NUM_MEM_PORTS=1;\
+#	export LEGUP_DUAL_PORT_BINDING=0;\
+	../../llvm/Release+Asserts/bin/llc -legup-config=config.tcl -legup-config=parallelaccels.tcl -legup-config=../legup.tcl -legup-config=config.tcl -march=v matrixmultiply.hw.11.bc -o matrixmultiply.v
+#only copy the .mif files if it exists
+find . -maxdepth 1 -name "*.mif" -print0 | xargs -0 -I {} cp {} ./output
+mkdir -p output/ip
+mv matrixmultiply.v output/ip/
+mv *_hw.tcl output/ip/.
+cd output/ && qsys-script --script=legup_qsys.tcl || [ $? -eq 4 ]
+cd output/ && qsys-generate ./legup_system.qsys --synthesis=VERILOG --testbench=SIMPLE --testbench-simulation=VERILOG
