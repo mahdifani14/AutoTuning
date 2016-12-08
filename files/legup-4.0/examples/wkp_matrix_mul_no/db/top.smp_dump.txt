@@ -1,0 +1,17 @@
+
+State Machine - |top|main:main_inst|cur_state
+Name cur_state.LEGUP_F_main_BB__19_13 cur_state.LEGUP_F_main_BB__17_12 cur_state.LEGUP_F_main_BB__15_11 cur_state.LEGUP_F_main_BB__12_10 cur_state.LEGUP_F_main_BB__10_9 cur_state.LEGUP_F_main_BB_multiplyexit_8 cur_state.LEGUP_F_main_BB_multiplyexit_7 cur_state.LEGUP_F_main_BB__1_6 cur_state.LEGUP_F_main_BB__1_5 cur_state.LEGUP_F_main_BB__1_4 cur_state.LEGUP_F_main_BB__1_3 cur_state.LEGUP_F_main_BB_preheader_2 cur_state.LEGUP_F_main_BB_preheader1_1 cur_state.LEGUP_0 
+cur_state.LEGUP_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+cur_state.LEGUP_F_main_BB_preheader1_1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+cur_state.LEGUP_F_main_BB_preheader_2 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+cur_state.LEGUP_F_main_BB__1_3 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+cur_state.LEGUP_F_main_BB__1_4 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+cur_state.LEGUP_F_main_BB__1_5 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__1_6 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_multiplyexit_7 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_multiplyexit_8 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__10_9 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__12_10 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__15_11 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__17_12 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__19_13 1 0 0 0 0 0 0 0 0 0 0 0 0 1 

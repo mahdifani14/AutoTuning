@@ -1,0 +1,12 @@
+digraph {
+Node0x285f0b0[label="  %234 = phi i32 [ %232, %231 ], [ %228,..."];
+Node0x285f0b0 -> Node0x285f0b0[label="D:0.00ns L:0",color=blue];
+Node0x285f0b0 -> Node0x285f0b0[label="D:0.00ns L:0",color=blue];
+Node0x285f190[label="  %position.28.i = phi i32 [ %202, %231 ..."];
+Node0x285f190 -> Node0x285f190[label="D:0.00ns L:0",color=blue];
+Node0x285f270[label="  %235 = load i32* %scevgep41, align 4, ..."];
+Node0x285f270 -> Node0x285f270[label="D:0.00ns L:2",color=blue];
+Node0x285f270 -> Node0x285f270[label="D:0.00ns L:2",color=blue];
+Node0x285f350[label="  %236 = icmp sgt i32 %234, %235"];
+Node0x285f350 -> Node0x285f350[label="D:3.13ns L:0",color=blue];
+}

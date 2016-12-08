@@ -1,0 +1,571 @@
+Analysis & Synthesis report for top
+Thu Dec  8 15:15:55 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|main:main_inst|cur_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst
+ 13. Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst|rom_dual_port:input_var0
+ 14. Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst|rom_dual_port:correctOutput
+ 15. Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst|ram_dual_port:y
+ 16. Parameter Settings for User Entity Instance: main:main_inst
+ 17. Port Connectivity Checks: "memory_controller:memory_controller_inst|ram_dual_port:y"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Dec  8 15:15:55 2016      ;
+; Quartus II 64-Bit Version       ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name                   ; top                                        ;
+; Top-level Entity Name           ; top                                        ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 393                                        ;
+; Total pins                      ; 37                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 0                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI PMA TX Serializers   ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; top                ; top                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                      ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+; sort.v                           ; yes             ; User Verilog HDL File  ; /home/legup/legup-4.0/examples/wkp_sort_no/sort.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 227       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 345       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 39        ;
+;     -- 5 input functions                    ; 2         ;
+;     -- 4 input functions                    ; 10        ;
+;     -- <=3 input functions                  ; 294       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 393       ;
+;                                             ;           ;
+; I/O pins                                    ; 37        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 393       ;
+; Total fan-out                               ; 2219      ;
+; Average fan-out                             ; 2.73      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                       ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+; |top                       ; 345 (0)           ; 393 (0)      ; 0                 ; 0          ; 37   ; 0            ; |top                ; work         ;
+;    |main:main_inst|        ; 345 (345)         ; 393 (393)    ; 0                 ; 0          ; 0    ; 0            ; |top|main:main_inst ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|main:main_inst|cur_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++----------------------------------------------------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+-----------------------------------------------+---------------------------------------+-----------------------------------------------+--------------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+-------------------+
+; Name                                               ; cur_state.LEGUP_F_main_BB__27_35 ; cur_state.LEGUP_F_main_BB__23_34 ; cur_state.LEGUP_F_main_BB__23_33 ; cur_state.LEGUP_F_main_BB__23_32 ; cur_state.LEGUP_F_main_BB__21_31 ; cur_state.LEGUP_F_main_BB_sortexit_30 ; cur_state.LEGUP_F_main_BB_sortexit_29 ; cur_state.LEGUP_F_main_BB_sortexit_28 ; cur_state.LEGUP_F_main_BB__crit_edge9i_27 ; cur_state.LEGUP_F_main_BB__crit_edge9i_26 ; cur_state.LEGUP_F_main_BB__crit_edge9i_25 ; cur_state.LEGUP_F_main_BB__crit_edge9i_24 ; cur_state.LEGUP_F_main_BB__crit_edge9i_23 ; cur_state.LEGUP_F_main_BB__crit_edge9i_22 ; cur_state.LEGUP_F_main_BB__crit_edge9i_21 ; cur_state.LEGUP_F_main_BB__crit_edge9i_20 ; cur_state.LEGUP_F_main_BB__crit_edge9i_19 ; cur_state.LEGUP_F_main_BB__crit_edge9ipreheader_18 ; cur_state.LEGUP_F_main_BB_lrphi_17 ; cur_state.LEGUP_F_main_BB_lrphi_16 ; cur_state.LEGUP_F_main_BB_lrphi_15 ; cur_state.LEGUP_F_main_BB_lrphi_14 ; cur_state.LEGUP_F_main_BB_lrphi_13 ; cur_state.LEGUP_F_main_BB_lrphi_12 ; cur_state.LEGUP_F_main_BB_lrphi_11 ; cur_state.LEGUP_F_main_BB_lrphi_10 ; cur_state.LEGUP_F_main_BB_lrphi_9 ; cur_state.LEGUP_F_main_BB_sortexitpreheader_8 ; cur_state.LEGUP_F_main_BB_loopexiti_7 ; cur_state.LEGUP_F_main_BB_loopexitiloopexit_6 ; cur_state.LEGUP_F_main_BB_lrphipreheader_5 ; cur_state.LEGUP_F_main_BB_lrph7i_4 ; cur_state.LEGUP_F_main_BB_lrph7i_3 ; cur_state.LEGUP_F_main_BB_lrph7i_2 ; cur_state.LEGUP_F_main_BB_lrph7i_1 ; cur_state.LEGUP_0 ;
++----------------------------------------------------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+-----------------------------------------------+---------------------------------------+-----------------------------------------------+--------------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+-------------------+
+; cur_state.LEGUP_0                                  ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                 ;
+; cur_state.LEGUP_F_main_BB_lrph7i_1                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 1                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrph7i_2                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 1                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrph7i_3                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 1                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrph7i_4                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 1                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphipreheader_5         ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 1                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_loopexitiloopexit_6      ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 1                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_loopexiti_7              ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 1                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_sortexitpreheader_8      ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 1                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_9                  ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_10                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_11                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_12                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_13                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_14                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_15                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_16                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_lrphi_17                 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 1                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9ipreheader_18 ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 1                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_19          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 1                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_20          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 1                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_21          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 1                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_22          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 1                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_23          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 1                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_24          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 1                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_25          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 1                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_26          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 1                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__crit_edge9i_27          ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 1                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_sortexit_28              ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 1                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_sortexit_29              ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 1                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB_sortexit_30              ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                ; 1                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__21_31                   ; 0                                ; 0                                ; 0                                ; 0                                ; 1                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__23_32                   ; 0                                ; 0                                ; 0                                ; 1                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__23_33                   ; 0                                ; 0                                ; 1                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__23_34                   ; 0                                ; 1                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
+; cur_state.LEGUP_F_main_BB__27_35                   ; 1                                ; 0                                ; 0                                ; 0                                ; 0                                ; 0                                     ; 0                                     ; 0                                     ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                         ; 0                                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 0                                 ; 0                                             ; 0                                     ; 0                                             ; 0                                          ; 0                                  ; 0                                  ; 0                                  ; 0                                  ; 1                 ;
++----------------------------------------------------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+----------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+-----------------------------------+-----------------------------------------------+---------------------------------------+-----------------------------------------------+--------------------------------------------+------------------------------------+------------------------------------+------------------------------------+------------------------------------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++-----------------------------------------------------+------------------------------------------------+
+; Register name                                       ; Reason for Removal                             ;
++-----------------------------------------------------+------------------------------------------------+
+; main:main_inst|return_val[0..13,15,17,19,23,25..30] ; Merged with main:main_inst|return_val[31]      ;
+; main:main_inst|return_val[14,16,18,20..22]          ; Merged with main:main_inst|return_val[24]      ;
+; main:main_inst|return_val[24]                       ; Merged with main:main_inst|return_val[31]      ;
+; main:main_inst|main_lrphi_7_reg[0]                  ; Merged with main:main_inst|main_lrphi_5_reg[0] ;
+; main:main_inst|return_val[31]                       ; Stuck at GND due to stuck port data_in         ;
+; main:main_inst|cur_state~38                         ; Lost fanout                                    ;
+; main:main_inst|cur_state~39                         ; Lost fanout                                    ;
+; main:main_inst|cur_state~40                         ; Lost fanout                                    ;
+; main:main_inst|cur_state~41                         ; Lost fanout                                    ;
+; main:main_inst|cur_state~42                         ; Lost fanout                                    ;
+; main:main_inst|cur_state~43                         ; Lost fanout                                    ;
+; Total Number of Removed Registers = 39              ;                                                ;
++-----------------------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 393   ;
+; Number of registers using Synchronous Clear  ; 161   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 356   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |top|main:main_inst|main_lrphi_3_reg[25]             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |top|main:main_inst|main_sortexit_i02_reg[17]        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |top|main:main_inst|main__crit_edge9i_indvar_reg[17] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |top|main:main_inst|main_23_i11_reg[15]              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |top|main:main_inst|main_lrph7i_i05i_reg[25]         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; latency        ; 2     ; Signed Integer                                               ;
+; ram_latency    ; 1     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst|rom_dual_port:input_var0 ;
++----------------+----------------+------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                         ;
++----------------+----------------+------------------------------------------------------------------------------+
+; width_a        ; 32             ; Signed Integer                                                               ;
+; width_b        ; 32             ; Signed Integer                                                               ;
+; widthad_a      ; 7              ; Signed Integer                                                               ;
+; widthad_b      ; 7              ; Signed Integer                                                               ;
+; numwords_a     ; 100            ; Signed Integer                                                               ;
+; numwords_b     ; 100            ; Signed Integer                                                               ;
+; init_file      ; input_var0.mif ; String                                                                       ;
+; latency        ; 1              ; Signed Integer                                                               ;
++----------------+----------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst|rom_dual_port:correctOutput ;
++----------------+-------------------+------------------------------------------------------------------------------+
+; Parameter Name ; Value             ; Type                                                                         ;
++----------------+-------------------+------------------------------------------------------------------------------+
+; width_a        ; 32                ; Signed Integer                                                               ;
+; width_b        ; 32                ; Signed Integer                                                               ;
+; widthad_a      ; 7                 ; Signed Integer                                                               ;
+; widthad_b      ; 7                 ; Signed Integer                                                               ;
+; numwords_a     ; 100               ; Signed Integer                                                               ;
+; numwords_b     ; 100               ; Signed Integer                                                               ;
+; init_file      ; correctOutput.mif ; String                                                                       ;
+; latency        ; 1                 ; Signed Integer                                                               ;
++----------------+-------------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory_controller:memory_controller_inst|ram_dual_port:y ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; width_a        ; 32    ; Signed Integer                                                               ;
+; width_b        ; 32    ; Signed Integer                                                               ;
+; widthad_a      ; 7     ; Signed Integer                                                               ;
+; widthad_b      ; 7     ; Signed Integer                                                               ;
+; numwords_a     ; 100   ; Signed Integer                                                               ;
+; numwords_b     ; 100   ; Signed Integer                                                               ;
+; init_file      ; y.mif ; String                                                                       ;
+; width_be_a     ; 1     ; Signed Integer                                                               ;
+; width_be_b     ; 1     ; Signed Integer                                                               ;
+; latency        ; 1     ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: main:main_inst                                   ;
++------------------------------------------+----------------------------------+-----------------+
+; Parameter Name                           ; Value                            ; Type            ;
++------------------------------------------+----------------------------------+-----------------+
+; LEGUP_0                                  ; 000000                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrph7i_1                 ; 000001                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrph7i_2                 ; 000010                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrph7i_3                 ; 000011                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrph7i_4                 ; 000100                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphipreheader_5         ; 000101                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_loopexitiloopexit_6      ; 000110                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_loopexiti_7              ; 000111                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_sortexitpreheader_8      ; 001000                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_9                  ; 001001                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_10                 ; 001010                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_11                 ; 001011                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_12                 ; 001100                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_13                 ; 001101                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_14                 ; 001110                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_15                 ; 001111                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_16                 ; 010000                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_lrphi_17                 ; 010001                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9ipreheader_18 ; 010010                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_19          ; 010011                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_20          ; 010100                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_21          ; 010101                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_22          ; 010110                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_23          ; 010111                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_24          ; 011000                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_25          ; 011001                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_26          ; 011010                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__crit_edge9i_27          ; 011011                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_sortexit_28              ; 011100                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_sortexit_29              ; 011101                           ; Unsigned Binary ;
+; LEGUP_F_main_BB_sortexit_30              ; 011110                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__21_31                   ; 011111                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__23_32                   ; 100000                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__23_33                   ; 100001                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__23_34                   ; 100010                           ; Unsigned Binary ;
+; LEGUP_F_main_BB__27_35                   ; 100011                           ; Unsigned Binary ;
+; tag_offset                               ; 000000000                        ; Unsigned Binary ;
+; tag_addr_offset                          ; 00000000000000000000000000000000 ; Unsigned Binary ;
++------------------------------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memory_controller:memory_controller_inst|ram_dual_port:y" ;
++-----------+-------+----------+-------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                               ;
++-----------+-------+----------+-------------------------------------------------------+
+; byteena_a ; Input ; Info     ; Stuck at VCC                                          ;
+; byteena_b ; Input ; Info     ; Stuck at VCC                                          ;
++-----------+-------+----------+-------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 393                         ;
+;     ENA               ; 196                         ;
+;     ENA SCLR          ; 160                         ;
+;     SCLR              ; 1                           ;
+;     plain             ; 36                          ;
+; arriav_lcell_comb     ; 346                         ;
+;     arith             ; 250                         ;
+;         1 data inputs ; 247                         ;
+;         2 data inputs ; 3                           ;
+;     normal            ; 96                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 2                           ;
+;         6 data inputs ; 39                          ;
+; boundary_port         ; 37                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.60                        ;
+; Average LUT depth     ; 3.74                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Thu Dec  8 15:15:25 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 11 design units, including 11 entities, in source file sort.v
+    Info (12023): Found entity 1: top
+    Info (12023): Found entity 2: memory_controller
+    Info (12023): Found entity 3: main
+    Info (12023): Found entity 4: ram_dual_port
+    Info (12023): Found entity 5: rom_dual_port
+    Info (12023): Found entity 6: ML605
+    Info (12023): Found entity 7: de4
+    Info (12023): Found entity 8: de2
+    Info (12023): Found entity 9: circuit_start_control
+    Info (12023): Found entity 10: hex_digits
+    Info (12023): Found entity 11: main_tb
+Warning (10236): Verilog HDL Implicit Net warning at sort.v(81): created implicit net for "clk2x"
+Warning (10236): Verilog HDL Implicit Net warning at sort.v(82): created implicit net for "clk1x_follower"
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "memory_controller" for hierarchy "memory_controller:memory_controller_inst"
+Warning (10036): Verilog HDL or VHDL warning at sort.v(154): object "input_var0_write_enable_a" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(155): object "input_var0_write_enable_b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(156): object "input_var0_in_a" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(157): object "input_var0_in_b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(181): object "correctOutput_write_enable_a" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(182): object "correctOutput_write_enable_b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(183): object "correctOutput_in_a" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sort.v(184): object "correctOutput_in_b" assigned a value but never read
+Info (12128): Elaborating entity "rom_dual_port" for hierarchy "memory_controller:memory_controller_inst|rom_dual_port:input_var0"
+Warning (10858): Verilog HDL warning at sort.v(1792): object ram used but never assigned
+Info (12128): Elaborating entity "rom_dual_port" for hierarchy "memory_controller:memory_controller_inst|rom_dual_port:correctOutput"
+Warning (10858): Verilog HDL warning at sort.v(1792): object ram used but never assigned
+Info (12128): Elaborating entity "ram_dual_port" for hierarchy "memory_controller:memory_controller_inst|ram_dual_port:y"
+Info (12128): Elaborating entity "main" for hierarchy "main:main_inst"
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "memory_controller_waitrequest" is missing source, defaulting to GND
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "return_val[0]" is stuck at GND
+    Warning (13410): Pin "return_val[1]" is stuck at GND
+    Warning (13410): Pin "return_val[2]" is stuck at GND
+    Warning (13410): Pin "return_val[3]" is stuck at GND
+    Warning (13410): Pin "return_val[4]" is stuck at GND
+    Warning (13410): Pin "return_val[5]" is stuck at GND
+    Warning (13410): Pin "return_val[6]" is stuck at GND
+    Warning (13410): Pin "return_val[7]" is stuck at GND
+    Warning (13410): Pin "return_val[8]" is stuck at GND
+    Warning (13410): Pin "return_val[9]" is stuck at GND
+    Warning (13410): Pin "return_val[10]" is stuck at GND
+    Warning (13410): Pin "return_val[11]" is stuck at GND
+    Warning (13410): Pin "return_val[12]" is stuck at GND
+    Warning (13410): Pin "return_val[13]" is stuck at GND
+    Warning (13410): Pin "return_val[14]" is stuck at GND
+    Warning (13410): Pin "return_val[15]" is stuck at GND
+    Warning (13410): Pin "return_val[16]" is stuck at GND
+    Warning (13410): Pin "return_val[17]" is stuck at GND
+    Warning (13410): Pin "return_val[18]" is stuck at GND
+    Warning (13410): Pin "return_val[19]" is stuck at GND
+    Warning (13410): Pin "return_val[20]" is stuck at GND
+    Warning (13410): Pin "return_val[21]" is stuck at GND
+    Warning (13410): Pin "return_val[22]" is stuck at GND
+    Warning (13410): Pin "return_val[23]" is stuck at GND
+    Warning (13410): Pin "return_val[24]" is stuck at GND
+    Warning (13410): Pin "return_val[25]" is stuck at GND
+    Warning (13410): Pin "return_val[26]" is stuck at GND
+    Warning (13410): Pin "return_val[27]" is stuck at GND
+    Warning (13410): Pin "return_val[28]" is stuck at GND
+    Warning (13410): Pin "return_val[29]" is stuck at GND
+    Warning (13410): Pin "return_val[30]" is stuck at GND
+    Warning (13410): Pin "return_val[31]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/legup/legup-4.0/examples/wkp_sort_no/top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "waitrequest"
+Info (21057): Implemented 670 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 633 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 1052 megabytes
+    Info: Processing ended: Thu Dec  8 15:15:55 2016
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:23
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/legup/legup-4.0/examples/wkp_sort_no/top.map.smsg.
+
+

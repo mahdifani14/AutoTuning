@@ -1,0 +1,10 @@
+digraph {
+Node0x286e590[label="  %256 = load i32* %scevgep235, align 4,..."];
+Node0x286e590 -> Node0x286e590[label="D:0.00ns L:2",color=blue];
+Node0x286e590 -> Node0x286e590[label="D:0.00ns L:2",color=blue];
+Node0x286e670[label="  store i32 %253, i32* %scevgep235, alig..."];
+Node0x286e590 -> Node0x286e670[label="D:0.00ns L:2",color=red];
+Node0x286e750[label="  store i32 %256, i32* %scevgep38, align..."];
+Node0x286e590 -> Node0x286e750[label="D:0.00ns L:2",color=red];
+Node0x286e670 -> Node0x286e750[label="D:20.00ns L:1",color=red];
+}

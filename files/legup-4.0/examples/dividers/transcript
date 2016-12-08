@@ -1,0 +1,31 @@
+# vsim -c -do "run 7000000000000000ns; exit;" work.main_tb 
+# Start time: 13:03:39 on Sep 03,2016
+# Loading work.main_tb
+# Loading work.top
+# Loading work.memory_controller
+# Loading work.ram_dual_port
+# Loading work.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.main
+# Loading work.SerialDivider
+# Loading work.DFlipFlop
+# Loading work.ShiftLeftRegister
+# Loading work.DownwardsRunningCounter
+# run 7000000000000000ns
+# Cycle:                  172 Time:                 3490    Result           0:          72
+# Cycle:                  344 Time:                 6930    Result           1:          23
+# Cycle:                  516 Time:                10370    Result           2:          46
+# Cycle:                  688 Time:                13810    Result           3:          63
+# Cycle:                  860 Time:                17250    Result           4:          56
+# Cycle:                 1032 Time:                20690    Result           5:          39
+# Cycle:                 1204 Time:                24130    Result           6:          54
+# Cycle:                 1376 Time:                27570    Result           7:          84
+# Cycle:                 1548 Time:                31010    Result           8:          59
+# Cycle:                 1720 Time:                34450    Result           9:          81
+# Cycle:                 1721 Time:                34470    Sum:         577
+# Cycle:                 1722 Time:                34490    RESULT: PASS
+# At t=            34510000 clk=1 finish=1 return_val=       577
+# Cycles:                 1723
+# ** Note: $finish    : dividers.v(2132)
+#    Time: 34510 ns  Iteration: 2  Instance: /main_tb
+# End time: 13:03:40 on Sep 03,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

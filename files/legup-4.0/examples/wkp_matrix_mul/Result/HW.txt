@@ -1,0 +1,8 @@
+# Result:             962122000
+# RESULT: PASS
+# At t=           109310000 clk=1 finish=1 return_val= 962122000
+# Cycles:                 5463
+# ** Note: $finish    : matrixmultiply_t.v(3670)
+#    Time: 109310 ns  Iteration: 2  Instance: /main_tb
+# End time: 15:30:02 on Dec 08,2016, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

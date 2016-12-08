@@ -1,0 +1,14 @@
+digraph {
+Node0x28a1e20[label="  %772 = add i32 %769, -99"];
+Node0x28a1e20 -> Node0x28a1e20[label="D:2.50ns L:0",color=blue];
+Node0x28a1f00[label="  %773 = sub i32 100, %769"];
+Node0x28a1f00 -> Node0x28a1f00[label="D:2.40ns L:0",color=blue];
+Node0x28a1f00 -> Node0x28a1f00[label="D:2.40ns L:0",color=blue];
+Node0x28a1f00 -> Node0x28a1f00[label="D:2.40ns L:0",color=blue];
+Node0x28a1fe0[label="  %774 = icmp sgt i32 %773, 99"];
+Node0x28a1fe0 -> Node0x28a1fe0[label="D:3.13ns L:0",color=blue];
+Node0x28a20c0[label="  %smax144 = select i1 %774, i32 %773, i..."];
+Node0x28a20c0 -> Node0x28a20c0[label="D:3.99ns L:0",color=blue];
+Node0x28a21a0[label="  %775 = add i32 %772, %smax144"];
+Node0x28a21a0 -> Node0x28a21a0[label="D:2.50ns L:0",color=blue];
+}

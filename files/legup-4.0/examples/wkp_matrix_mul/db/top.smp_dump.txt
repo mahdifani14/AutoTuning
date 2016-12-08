@@ -1,0 +1,34 @@
+
+State Machine - |top|main:main_inst|cur_state
+Name cur_state.LEGUP_F_main_BB__93_30 cur_state.LEGUP_F_main_BB__91_29 cur_state.LEGUP_F_main_BB__89_28 cur_state.LEGUP_F_main_BB__86_27 cur_state.LEGUP_F_main_BB__84_26 cur_state.LEGUP_F_main_BB__21_25 cur_state.LEGUP_F_main_BB__21_24 cur_state.LEGUP_F_main_BB__21_23 cur_state.LEGUP_F_main_BB__21_22 cur_state.LEGUP_F_main_BB__21_21 cur_state.LEGUP_F_main_BB__21_20 cur_state.LEGUP_F_main_BB__21_19 cur_state.LEGUP_F_main_BB__21_18 cur_state.LEGUP_F_main_BB__21_17 cur_state.LEGUP_F_main_BB__21_16 cur_state.LEGUP_F_main_BB__21_15 cur_state.LEGUP_F_main_BB__21_14 cur_state.LEGUP_F_main_BB__21_13 cur_state.LEGUP_F_main_BB_preheader_12 cur_state.LEGUP_F_main_BB_preheader_11 cur_state.LEGUP_F_main_BB_preheader_10 cur_state.LEGUP_F_main_BB_preheader_9 cur_state.LEGUP_F_main_BB_preheader_8 cur_state.LEGUP_F_main_BB_preheader_7 cur_state.LEGUP_F_main_BB_preheader_6 cur_state.LEGUP_F_main_BB_preheader_5 cur_state.LEGUP_F_main_BB_preheader_4 cur_state.LEGUP_F_main_BB_preheader_3 cur_state.LEGUP_F_main_BB_preheader_2 cur_state.LEGUP_F_main_BB_preheader_1 cur_state.LEGUP_0 
+cur_state.LEGUP_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+cur_state.LEGUP_F_main_BB_preheader_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+cur_state.LEGUP_F_main_BB_preheader_2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+cur_state.LEGUP_F_main_BB_preheader_3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB_preheader_12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_17 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_18 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_19 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_20 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_21 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_22 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_23 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_24 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__21_25 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__84_26 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__86_27 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__89_28 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__91_29 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cur_state.LEGUP_F_main_BB__93_30 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

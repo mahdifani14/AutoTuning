@@ -1,0 +1,7 @@
+digraph {
+Node0x3e485b0[label="  %11 = add nsw i32 %i.04, 1"];
+Node0x3e485b0 -> Node0x3e485b0[label="D:2.50ns L:0",color=blue];
+Node0x3e485b0 -> Node0x3e485b0[label="D:2.50ns L:0",color=blue];
+Node0x3e48690[label="  %exitcond = icmp eq i32 %11, 20"];
+Node0x3e48690 -> Node0x3e48690[label="D:2.49ns L:0",color=blue];
+}
