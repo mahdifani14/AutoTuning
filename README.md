@@ -6,3 +6,6 @@ gcc -o app app.c
 <br>orcc -v app.c
 ####To Evaluate the Speed-Up
 perf stat -o profile.txt -r 3 -e task-clock -x : ./a.out
+####For Ploting the Result
+By using gnuplot<br>
+<a href="https://www.cs.hmc.edu/~vrable/gnuplot/using-gnuplot.html">Click here to visit the Website</a>.
