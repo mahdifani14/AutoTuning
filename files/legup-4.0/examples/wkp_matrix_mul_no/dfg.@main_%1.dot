@@ -1,0 +1,27 @@
+digraph {
+Node0x3e47580[label="  %sum.02.i = phi i32 [ %5, %1 ], [ 0, %..."];
+Node0x3e47580 -> Node0x3e47580[label="D:0.00ns L:0",color=blue];
+Node0x3e47660[label="  %k.01.i = phi i32 [ %6, %1 ], [ 0, %.p..."];
+Node0x3e47660 -> Node0x3e47660[label="D:0.00ns L:0",color=blue];
+Node0x3e47660 -> Node0x3e47660[label="D:0.00ns L:0",color=blue];
+Node0x3e47660 -> Node0x3e47660[label="D:0.00ns L:0",color=blue];
+Node0x3e47740[label="  %scevgep2 = getelementptr [20 x [20 x ..."];
+Node0x3e47740 -> Node0x3e47740[label="D:20.00ns L:0",color=blue];
+Node0x3e47820[label="  %scevgep = getelementptr [20 x [20 x i..."];
+Node0x3e47820 -> Node0x3e47820[label="D:20.00ns L:0",color=blue];
+Node0x3e47900[label="  %2 = load volatile i32* %scevgep2, ali..."];
+Node0x3e47900 -> Node0x3e47900[label="D:0.00ns L:2",color=blue];
+Node0x3e47a10[label="  %3 = load volatile i32* %scevgep, alig..."];
+Node0x3e47a10 -> Node0x3e47a10[label="D:0.00ns L:2",color=blue];
+Node0x3e47af0[label="  %4 = mul nsw i32 %3, %2"];
+Node0x3e47af0 -> Node0x3e47af0[label="D:2.59ns L:1",color=blue];
+Node0x3e47c90[label="  %5 = add nsw i32 %4, %sum.02.i"];
+Node0x3e47c90 -> Node0x3e47c90[label="D:2.50ns L:0",color=blue];
+Node0x3e47c90 -> Node0x3e47c90[label="D:2.50ns L:0",color=blue];
+Node0x3e47c90 -> Node0x3e47c90[label="D:2.50ns L:0",color=blue];
+Node0x3e47da0[label="  %6 = add nsw i32 %k.01.i, 1"];
+Node0x3e47da0 -> Node0x3e47da0[label="D:2.50ns L:0",color=blue];
+Node0x3e47da0 -> Node0x3e47da0[label="D:2.50ns L:0",color=blue];
+Node0x3e47e80[label="  %exitcond1 = icmp eq i32 %6, 20"];
+Node0x3e47e80 -> Node0x3e47e80[label="D:2.49ns L:0",color=blue];
+}

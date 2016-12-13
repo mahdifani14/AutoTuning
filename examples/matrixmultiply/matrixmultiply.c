@@ -23,7 +23,6 @@ int multiply(int i, int j) {
 
 int main(void) {
     int i, j;
-    
     unsigned long long count = 0;
     for(i = 0; i < SIZE; i++) {
         for(j = 0; j < SIZE; j++) {
@@ -40,5 +39,3 @@ int main(void) {
     return count;
 
 }
-
-

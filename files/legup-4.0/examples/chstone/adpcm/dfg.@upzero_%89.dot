@@ -1,0 +1,28 @@
+digraph {
+Node0x3d50550[label="  %.pre-phi14 = phi i32* [ %11, %.prehea..."];
+Node0x3d50550 -> Node0x3d50550[label="D:0.00ns L:0",color=blue];
+Node0x3d50630[label="  %.pre-phi12 = phi i32* [ %22, %.prehea..."];
+Node0x3d50630 -> Node0x3d50630[label="D:0.00ns L:0",color=blue];
+Node0x3d50710[label="  %.pre-phi10 = phi i32* [ %33, %.prehea..."];
+Node0x3d50710 -> Node0x3d50710[label="D:0.00ns L:0",color=blue];
+Node0x3d50710 -> Node0x3d50710[label="D:0.00ns L:0",color=blue];
+Node0x3d507f0[label="  %.pre-phi8 = phi i32* [ %55, %.prehead..."];
+Node0x3d507f0 -> Node0x3d507f0[label="D:0.00ns L:0",color=blue];
+Node0x3d508d0[label="  %.pre-phi = phi i32* [ %44, %.preheade..."];
+Node0x3d508d0 -> Node0x3d508d0[label="D:0.00ns L:0",color=blue];
+Node0x3d508d0 -> Node0x3d508d0[label="D:0.00ns L:0",color=blue];
+Node0x3d509b0[label="  %90 = load i32* %.pre-phi, align 4, !t..."];
+Node0x3d509b0 -> Node0x3d509b0[label="D:0.00ns L:2",color=blue];
+Node0x3d50c50[label="  store i32 %91, i32* %.pre-phi, align 4..."];
+Node0x3d509b0 -> Node0x3d50c50[label="D:0.00ns L:2",color=red];
+Node0x3d50b70[label="  %91 = load i32* %.pre-phi10, align 4, ..."];
+Node0x3d50b70 -> Node0x3d50b70[label="D:0.00ns L:2",color=blue];
+Node0x3d50e10[label="  store i32 %92, i32* %.pre-phi10, align..."];
+Node0x3d50b70 -> Node0x3d50e10[label="D:0.00ns L:2",color=red];
+Node0x3d50d30[label="  %92 = load i32* %.pre-phi12, align 4, ..."];
+Node0x3d50d30 -> Node0x3d50d30[label="D:0.00ns L:2",color=blue];
+Node0x3d50ef0[label="  %93 = load i32* %dlti, align 4, !tbaa ..."];
+Node0x3d50ef0 -> Node0x3d50ef0[label="D:0.00ns L:2",color=blue];
+Node0x3d510b0[label="  store i32 %dlt, i32* %dlti, align 4, !..."];
+Node0x3d50ef0 -> Node0x3d510b0[label="D:0.00ns L:2",color=red];
+}

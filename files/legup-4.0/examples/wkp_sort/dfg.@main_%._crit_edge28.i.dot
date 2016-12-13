@@ -1,0 +1,11 @@
+digraph {
+Node0x285ce90[label="  %98 = srem i32 %30, 9"];
+Node0x285ce90 -> Node0x285ce90[label="D:20.00ns L:32",color=blue];
+Node0x285ce90 -> Node0x285ce90[label="D:20.00ns L:32",color=blue];
+Node0x285ce90 -> Node0x285ce90[label="D:20.00ns L:32",color=blue];
+Node0x285ce90 -> Node0x285ce90[label="D:20.00ns L:32",color=blue];
+Node0x285cf70[label="  %99 = sub nsw i32 100, %98"];
+Node0x285cf70 -> Node0x285cf70[label="D:2.40ns L:0",color=blue];
+Node0x285d050[label="  %100 = icmp sgt i32 %99, 99"];
+Node0x285d050 -> Node0x285d050[label="D:3.13ns L:0",color=blue];
+}

@@ -1,0 +1,732 @@
+
+====== START ORIO ======
+
+----- begin reading the source file: multiplication.c -----
+----- finished reading the source file -----
+
+----- begin parsing annotations -----
+----- finished parsing annotations -----
+
+----- begin optimizations -----
+Search_Space         = 4.000e+01
+Number_of_Parameters = 02
+Numeric_Parameters   = 02
+Binary_Parameters    = 00
+['UF', 'CFLAGS']
+[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ['-O0', '-O1', '-O2', '-O3']]
+
+----- begin empirical tuning for problem size -----
+ N = 10
+
+----- begin exhaustive search -----
+Code stats:
+        Number of loops: 	3
+        Max loop nest depth: 	3
+        Additions: 		7
+        Multiplications: 	1
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			28
+        Writes: 		9
+        Comparisons:		3
+        Gotos: 			0
+        
+ building the original code:
+	gcc  -DORIO_REPS=5 -DORIGINAL -o __orio_perftest_original.exe __orio_perftest1.c timer_cpu.o 
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest1.exe __orio_perftest1.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest1.exe  
+coordinate: [0, 0], average cost: 2.4025e-07, all costs: [7.85e-07, 2.61e-07, 2.33e-07, 2.26e-07, 2.41e-07], average transfer time: inf
+>>>> best coordinate found: [0, 0], average cost: 2.402500e-07, average transfer time: inf
+Code stats:
+        Number of loops: 	8
+        Max loop nest depth: 	3
+        Additions: 		24
+        Multiplications: 	3
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			81
+        Writes: 		25
+        Comparisons:		8
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest2.exe __orio_perftest2.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest2.exe  
+coordinate: [1, 0], average cost: 1.725e-07, all costs: [7.64e-07, 2.28e-07, 1.54e-07, 1.54e-07, 1.54e-07], average transfer time: inf
+>>>> best coordinate found: [1, 0], average cost: 1.725000e-07, average transfer time: inf
+Code stats:
+        Number of loops: 	10
+        Max loop nest depth: 	3
+        Additions: 		31
+        Multiplications: 	4
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			104
+        Writes: 		32
+        Comparisons:		10
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest3.exe __orio_perftest3.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest3.exe  
+coordinate: [2, 0], average cost: 1.8625e-07, all costs: [1.114e-06, 2.76e-07, 1.56e-07, 1.58e-07, 1.55e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	12
+        Max loop nest depth: 	3
+        Additions: 		38
+        Multiplications: 	5
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			127
+        Writes: 		39
+        Comparisons:		12
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest4.exe __orio_perftest4.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest4.exe  
+coordinate: [3, 0], average cost: 1.475e-07, all costs: [7.19e-07, 1.56e-07, 1.43e-07, 1.45e-07, 1.46e-07], average transfer time: inf
+>>>> best coordinate found: [3, 0], average cost: 1.475000e-07, average transfer time: inf
+Code stats:
+        Number of loops: 	14
+        Max loop nest depth: 	3
+        Additions: 		45
+        Multiplications: 	6
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			150
+        Writes: 		46
+        Comparisons:		14
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest5.exe __orio_perftest5.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest5.exe  
+coordinate: [4, 0], average cost: 1.605e-07, all costs: [8.43e-07, 2.03e-07, 1.46e-07, 1.44e-07, 1.49e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	16
+        Max loop nest depth: 	3
+        Additions: 		52
+        Multiplications: 	7
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			173
+        Writes: 		53
+        Comparisons:		16
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest6.exe __orio_perftest6.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest6.exe  
+coordinate: [5, 0], average cost: 1.54e-07, all costs: [7.75e-07, 1.68e-07, 1.47e-07, 1.51e-07, 1.5e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	18
+        Max loop nest depth: 	3
+        Additions: 		59
+        Multiplications: 	8
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			196
+        Writes: 		60
+        Comparisons:		18
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest7.exe __orio_perftest7.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest7.exe  
+coordinate: [6, 0], average cost: 1.6075e-07, all costs: [7.2e-07, 2.03e-07, 1.49e-07, 1.47e-07, 1.44e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	20
+        Max loop nest depth: 	3
+        Additions: 		66
+        Multiplications: 	9
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			219
+        Writes: 		67
+        Comparisons:		20
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest8.exe __orio_perftest8.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest8.exe  
+coordinate: [7, 0], average cost: 2.18e-07, all costs: [8.52e-07, 2.94e-07, 2.17e-07, 1.69e-07, 1.92e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	22
+        Max loop nest depth: 	3
+        Additions: 		73
+        Multiplications: 	10
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			242
+        Writes: 		74
+        Comparisons:		22
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest9.exe __orio_perftest9.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest9.exe  
+coordinate: [8, 0], average cost: 1.6225e-07, all costs: [7.2e-07, 1.88e-07, 1.56e-07, 1.53e-07, 1.52e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	24
+        Max loop nest depth: 	3
+        Additions: 		80
+        Multiplications: 	11
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			265
+        Writes: 		81
+        Comparisons:		24
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest10.exe __orio_perftest10.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest10.exe  
+coordinate: [9, 0], average cost: 1.6275e-07, all costs: [5.69e-07, 2.08e-07, 1.5e-07, 1.48e-07, 1.45e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	3
+        Max loop nest depth: 	3
+        Additions: 		7
+        Multiplications: 	1
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			28
+        Writes: 		9
+        Comparisons:		3
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest11.exe __orio_perftest11.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest11.exe  
+coordinate: [0, 1], average cost: 1.62e-07, all costs: [5.74e-07, 2.07e-07, 1.46e-07, 1.48e-07, 1.47e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	8
+        Max loop nest depth: 	3
+        Additions: 		24
+        Multiplications: 	3
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			81
+        Writes: 		25
+        Comparisons:		8
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest12.exe __orio_perftest12.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest12.exe  
+coordinate: [1, 1], average cost: 2.2025e-07, all costs: [1.367e-06, 2.97e-07, 1.84e-07, 2.08e-07, 1.92e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	10
+        Max loop nest depth: 	3
+        Additions: 		31
+        Multiplications: 	4
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			104
+        Writes: 		32
+        Comparisons:		10
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest13.exe __orio_perftest13.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest13.exe  
+coordinate: [2, 1], average cost: 2.395e-07, all costs: [9.06e-07, 2.94e-07, 2.27e-07, 2.16e-07, 2.21e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	12
+        Max loop nest depth: 	3
+        Additions: 		38
+        Multiplications: 	5
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			127
+        Writes: 		39
+        Comparisons:		12
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest14.exe __orio_perftest14.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest14.exe  
+coordinate: [3, 1], average cost: 1.6975e-07, all costs: [2.219e-06, 2.26e-07, 1.52e-07, 1.52e-07, 1.49e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	14
+        Max loop nest depth: 	3
+        Additions: 		45
+        Multiplications: 	6
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			150
+        Writes: 		46
+        Comparisons:		14
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest15.exe __orio_perftest15.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest15.exe  
+coordinate: [4, 1], average cost: 2.405e-07, all costs: [1.227e-06, 3.49e-07, 2.13e-07, 1.74e-07, 2.26e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	16
+        Max loop nest depth: 	3
+        Additions: 		52
+        Multiplications: 	7
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			173
+        Writes: 		53
+        Comparisons:		16
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest16.exe __orio_perftest16.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest16.exe  
+coordinate: [5, 1], average cost: 2.74e-07, all costs: [1.329e-06, 3.55e-07, 2.33e-07, 2.59e-07, 2.49e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	18
+        Max loop nest depth: 	3
+        Additions: 		59
+        Multiplications: 	8
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			196
+        Writes: 		60
+        Comparisons:		18
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest17.exe __orio_perftest17.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest17.exe  
+coordinate: [6, 1], average cost: 2.6375e-07, all costs: [1.106e-06, 3.92e-07, 2.02e-07, 2.12e-07, 2.49e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	20
+        Max loop nest depth: 	3
+        Additions: 		66
+        Multiplications: 	9
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			219
+        Writes: 		67
+        Comparisons:		20
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest18.exe __orio_perftest18.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest18.exe  
+coordinate: [7, 1], average cost: 1.6975e-07, all costs: [6.33e-07, 2.27e-07, 1.52e-07, 1.5e-07, 1.5e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	22
+        Max loop nest depth: 	3
+        Additions: 		73
+        Multiplications: 	10
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			242
+        Writes: 		74
+        Comparisons:		22
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest19.exe __orio_perftest19.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest19.exe  
+coordinate: [8, 1], average cost: 2.8075e-07, all costs: [1.03e-06, 4.39e-07, 2.07e-07, 2.13e-07, 2.64e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	24
+        Max loop nest depth: 	3
+        Additions: 		80
+        Multiplications: 	11
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			265
+        Writes: 		81
+        Comparisons:		24
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest20.exe __orio_perftest20.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest20.exe  
+coordinate: [9, 1], average cost: 1.69e-07, all costs: [5.67e-07, 1.83e-07, 1.66e-07, 1.66e-07, 1.61e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	3
+        Max loop nest depth: 	3
+        Additions: 		7
+        Multiplications: 	1
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			28
+        Writes: 		9
+        Comparisons:		3
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest21.exe __orio_perftest21.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest21.exe  
+coordinate: [0, 2], average cost: 2e-07, all costs: [6.83e-07, 2.4e-07, 2.03e-07, 1.86e-07, 1.71e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	8
+        Max loop nest depth: 	3
+        Additions: 		24
+        Multiplications: 	3
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			81
+        Writes: 		25
+        Comparisons:		8
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest22.exe __orio_perftest22.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest22.exe  
+coordinate: [1, 2], average cost: 1.88e-07, all costs: [7.94e-07, 2.74e-07, 1.63e-07, 1.58e-07, 1.57e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	10
+        Max loop nest depth: 	3
+        Additions: 		31
+        Multiplications: 	4
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			104
+        Writes: 		32
+        Comparisons:		10
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest23.exe __orio_perftest23.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest23.exe  
+coordinate: [2, 2], average cost: 1.925e-07, all costs: [7.83e-07, 2.64e-07, 1.69e-07, 1.7e-07, 1.67e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	12
+        Max loop nest depth: 	3
+        Additions: 		38
+        Multiplications: 	5
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			127
+        Writes: 		39
+        Comparisons:		12
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest24.exe __orio_perftest24.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest24.exe  
+coordinate: [3, 2], average cost: 2.895e-07, all costs: [1.198e-06, 4.46e-07, 2.56e-07, 2.29e-07, 2.27e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	14
+        Max loop nest depth: 	3
+        Additions: 		45
+        Multiplications: 	6
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			150
+        Writes: 		46
+        Comparisons:		14
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest25.exe __orio_perftest25.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest25.exe  
+coordinate: [4, 2], average cost: 1.6675e-07, all costs: [7.62e-07, 2.22e-07, 1.49e-07, 1.46e-07, 1.5e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	16
+        Max loop nest depth: 	3
+        Additions: 		52
+        Multiplications: 	7
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			173
+        Writes: 		53
+        Comparisons:		16
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest26.exe __orio_perftest26.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest26.exe  
+coordinate: [5, 2], average cost: 1.675e-07, all costs: [6.71e-07, 2.32e-07, 1.44e-07, 1.48e-07, 1.46e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	18
+        Max loop nest depth: 	3
+        Additions: 		59
+        Multiplications: 	8
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			196
+        Writes: 		60
+        Comparisons:		18
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest27.exe __orio_perftest27.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest27.exe  
+coordinate: [6, 2], average cost: 1.525e-07, all costs: [6.7e-07, 1.68e-07, 1.5e-07, 1.45e-07, 1.47e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	20
+        Max loop nest depth: 	3
+        Additions: 		66
+        Multiplications: 	9
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			219
+        Writes: 		67
+        Comparisons:		20
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest28.exe __orio_perftest28.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest28.exe  
+coordinate: [7, 2], average cost: 2.135e-07, all costs: [7.74e-07, 3.28e-07, 1.76e-07, 1.77e-07, 1.73e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	22
+        Max loop nest depth: 	3
+        Additions: 		73
+        Multiplications: 	10
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			242
+        Writes: 		74
+        Comparisons:		22
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest29.exe __orio_perftest29.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest29.exe  
+coordinate: [8, 2], average cost: 1.665e-07, all costs: [7.07e-07, 2.17e-07, 1.5e-07, 1.5e-07, 1.49e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	24
+        Max loop nest depth: 	3
+        Additions: 		80
+        Multiplications: 	11
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			265
+        Writes: 		81
+        Comparisons:		24
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest30.exe __orio_perftest30.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest30.exe  
+coordinate: [9, 2], average cost: 2.155e-07, all costs: [8.84e-07, 3.17e-07, 1.87e-07, 1.77e-07, 1.81e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	3
+        Max loop nest depth: 	3
+        Additions: 		7
+        Multiplications: 	1
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			28
+        Writes: 		9
+        Comparisons:		3
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest31.exe __orio_perftest31.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest31.exe  
+coordinate: [0, 3], average cost: 1.59e-07, all costs: [6.52e-07, 2.04e-07, 1.44e-07, 1.45e-07, 1.43e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	8
+        Max loop nest depth: 	3
+        Additions: 		24
+        Multiplications: 	3
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			81
+        Writes: 		25
+        Comparisons:		8
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest32.exe __orio_perftest32.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest32.exe  
+coordinate: [1, 3], average cost: 1.5475e-07, all costs: [7.89e-07, 1.86e-07, 1.44e-07, 1.44e-07, 1.45e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	10
+        Max loop nest depth: 	3
+        Additions: 		31
+        Multiplications: 	4
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			104
+        Writes: 		32
+        Comparisons:		10
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest33.exe __orio_perftest33.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest33.exe  
+coordinate: [2, 3], average cost: 1.5975e-07, all costs: [6.98e-07, 1.88e-07, 1.52e-07, 1.49e-07, 1.5e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	12
+        Max loop nest depth: 	3
+        Additions: 		38
+        Multiplications: 	5
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			127
+        Writes: 		39
+        Comparisons:		12
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest34.exe __orio_perftest34.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest34.exe  
+coordinate: [3, 3], average cost: 1.6775e-07, all costs: [6.87e-07, 2.19e-07, 1.51e-07, 1.51e-07, 1.5e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	14
+        Max loop nest depth: 	3
+        Additions: 		45
+        Multiplications: 	6
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			150
+        Writes: 		46
+        Comparisons:		14
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest35.exe __orio_perftest35.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest35.exe  
+coordinate: [4, 3], average cost: 1.58e-07, all costs: [8.53e-07, 1.83e-07, 1.51e-07, 1.5e-07, 1.48e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	16
+        Max loop nest depth: 	3
+        Additions: 		52
+        Multiplications: 	7
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			173
+        Writes: 		53
+        Comparisons:		16
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest36.exe __orio_perftest36.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest36.exe  
+coordinate: [5, 3], average cost: 1.795e-07, all costs: [6.77e-07, 2.76e-07, 1.5e-07, 1.47e-07, 1.45e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	18
+        Max loop nest depth: 	3
+        Additions: 		59
+        Multiplications: 	8
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			196
+        Writes: 		60
+        Comparisons:		18
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest37.exe __orio_perftest37.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest37.exe  
+coordinate: [6, 3], average cost: 1.7775e-07, all costs: [8.36e-07, 2.29e-07, 1.51e-07, 1.48e-07, 1.83e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	20
+        Max loop nest depth: 	3
+        Additions: 		66
+        Multiplications: 	9
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			219
+        Writes: 		67
+        Comparisons:		20
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest38.exe __orio_perftest38.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest38.exe  
+coordinate: [7, 3], average cost: 1.6125e-07, all costs: [6.25e-07, 2e-07, 1.49e-07, 1.48e-07, 1.48e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	22
+        Max loop nest depth: 	3
+        Additions: 		73
+        Multiplications: 	10
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			242
+        Writes: 		74
+        Comparisons:		22
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest39.exe __orio_perftest39.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest39.exe  
+coordinate: [8, 3], average cost: 1.52e-07, all costs: [6.47e-07, 1.73e-07, 1.45e-07, 1.45e-07, 1.45e-07], average transfer time: inf
+Code stats:
+        Number of loops: 	24
+        Max loop nest depth: 	3
+        Additions: 		80
+        Multiplications: 	11
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			265
+        Writes: 		81
+        Comparisons:		24
+        Gotos: 			0
+        
+ building test:
+	gcc  -DORIO_REPS=5 -o __orio_perftest40.exe __orio_perftest40.c timer_cpu.o 
+ running test:
+	 ./__orio_perftest40.exe  
+coordinate: [9, 3], average cost: 1.645e-07, all costs: [6.74e-07, 2.26e-07, 1.44e-07, 1.43e-07, 1.45e-07], average transfer time: inf
+----- end exhaustive search -----
+----- begin summary -----
+ best coordinate: [3, 0]={'UF': 4, 'CFLAGS': '-O0'}, cost=1.475000e-07, transfer_time=inf, inputs=[('N', 10)], search_time=6.10, runs=0
+----- end summary -----
+----- the obtained best performance parameters -----
+ CFLAGS = -O0
+ UF = 4
+Code stats:
+        Number of loops: 	12
+        Max loop nest depth: 	3
+        Additions: 		38
+        Multiplications: 	5
+        Divisions: 		0
+        Logical: 		0
+        Reads: 			127
+        Writes: 		39
+        Comparisons:		12
+        Gotos: 			0
+        
+----- finish optimizations -----
+
+----- begin writing the output file(s) -----
+--> writing output to: _multiplication.c
+----- finished writing the output file(s) -----
+
+====== END ORIO ======

@@ -1,0 +1,6 @@
+# Result: 962122000
+# 
+# RESULT: PASS
+# 
+# counter =               233362
+
